@@ -14,7 +14,7 @@ export const articles: Article[] = [
     title: 'Clay Tablets And First Records',
     category: 'ANCIENT MESOPOTAMIA',
     date: 'c. 3500 BC',
-    image: require('../assets/ClayTabletsAndFirstRecords.png'),
+    image: require('../assets/article-clay-tablets-and-first-records.png'),
     description: 'The first books did not look like the books we know today.',
     paragraphs: [
       'The first books did not look like the books we know today. In ancient Mesopotamia, people recorded information on clay tablets using cuneiform writing. These records helped preserve laws, trade agreements, myths, and important events.',
@@ -26,7 +26,7 @@ export const articles: Article[] = [
     title: 'Papyrus Scrolls Of Egypt',
     category: 'ANCIENT EGYPT',
     date: 'c. 3100 BC',
-    image: require('../assets/PapyrusScrollsOfEgypt.png'),
+    image: require('../assets/article-papyrus-scrolls-of-egypt.png'),
     description:
       'In Ancient Egypt, papyrus became one of the most important writing materials.',
     paragraphs: [
@@ -39,7 +39,7 @@ export const articles: Article[] = [
     title: 'Birth Of The Scroll',
     category: 'CLASSICAL WORLD',
     date: 'c. 600 BC',
-    image: require('../assets/BirthOfTheScroll.png'),
+    image: require('../assets/article-birth-of-the-scroll.png'),
     description:
       'The scroll became an important format for preserving long texts in ancient civilizations.',
     paragraphs: [
@@ -52,7 +52,7 @@ export const articles: Article[] = [
     title: 'Parchment And Durable Pages',
     category: 'ANCIENT WORLD',
     date: 'c. 200 BC',
-    image: require('../assets/ParchmentAndDurablePages.png'),
+    image: require('../assets/article-parchment-and-durable-pages.png'),
     description:
       'After papyrus, parchment became an important writing material.',
     paragraphs: [
@@ -65,7 +65,7 @@ export const articles: Article[] = [
     title: 'Codex Revolution',
     category: 'THE CODEX',
     date: 'c. 100 AD',
-    image: require('../assets/CodexRevolution.png'),
+    image: require('../assets/article-codex-revolution.png'),
     description: 'The codex was a major breakthrough in the history of books.',
     paragraphs: [
       'The codex was a major breakthrough in the history of books. Unlike a scroll, it was made of separate pages bound together on one side. This format closely resembles the modern book.',
@@ -77,7 +77,7 @@ export const articles: Article[] = [
     title: 'Monasteries And Manuscripts',
     category: 'MIDDLE AGES',
     date: 'c. 500 AD',
-    image: require('../assets/MonasteriesAndManuscripts.png'),
+    image: require('../assets/article-monasteries-and-manuscripts.png'),
     description:
       'During the Middle Ages, monasteries played a key role in preserving books.',
     paragraphs: [
@@ -90,7 +90,7 @@ export const articles: Article[] = [
     title: 'Illuminated Books',
     category: 'MEDIEVAL ART',
     date: 'c. 800 AD',
-    image: require('../assets/IlluminatedBooks.png'),
+    image: require('../assets/article-illuminated-books.png'),
     description:
       'Illuminated manuscripts were not only texts, but works of art.',
     paragraphs: [
@@ -103,7 +103,7 @@ export const articles: Article[] = [
     title: 'Paper Travels The World',
     category: 'PAPER & CULTURE',
     date: 'c. 105 AD',
-    image: require('../assets/PaperTravelsTheWorld.png'),
+    image: require('../assets/article-paper-travels-the-world.png'),
     description:
       'Paper became one of the most important inventions in book history.',
     paragraphs: [
@@ -116,7 +116,7 @@ export const articles: Article[] = [
     title: 'Printing Press Changes Everything',
     category: 'PRINTING REVOLUTION',
     date: 'c. 1450 AD',
-    image: require('../assets/PrintingPressChangesEverything.png'),
+    image: require('../assets/article-printing-press-changes-everything.png'),
     description:
       'In the fifteenth century, Johannes Gutenberg\u2019s printing press changed the history of reading.',
     paragraphs: [
@@ -129,7 +129,7 @@ export const articles: Article[] = [
     title: 'Public Libraries And Readers',
     category: 'PUBLIC KNOWLEDGE',
     date: '19th century',
-    image: require('../assets/PublicLibrariesAndReaders.png'),
+    image: require('../assets/article-public-libraries-and-readers.png'),
     description:
       'Over time, books moved beyond monasteries, universities, and private collections.',
     paragraphs: [
@@ -142,7 +142,7 @@ export const articles: Article[] = [
     title: 'Paperback Era',
     category: 'EVERYDAY READING',
     date: '20th century',
-    image: require('../assets/PaperbackEra.png'),
+    image: require('../assets/article-paperback-era.png'),
     description: 'The paperback made books even closer to everyday readers.',
     paragraphs: [
       'The paperback made books even closer to everyday readers. These books were cheaper, lighter, and easier to use in daily life. People could take them on trips, read them on public transport, or carry them in a bag.',
@@ -154,7 +154,7 @@ export const articles: Article[] = [
     title: 'Digital Books And Modern Reading',
     category: 'DIGITAL AGE',
     date: '1971\u2013today',
-    image: require('../assets/DigitalBooksAndModernReading.png'),
+    image: require('../assets/article-digital-books-and-modern-reading.png'),
     description: 'In the digital age, books gained new formats.',
     paragraphs: [
       'In the digital age, books gained new formats. E-books, audiobooks, and reading apps allow people to read or listen almost anywhere. An entire library can now fit inside a single device.',

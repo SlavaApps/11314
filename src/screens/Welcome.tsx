@@ -16,25 +16,25 @@ import { colors } from '../theme';
 import { useScreenLayout } from '../hooks/useScreenLayout';
 const slides = [
   {
-    image: require('../assets/Slice01.png'),
+    image: require('../assets/onboarding-discover-books.png'),
     title: 'Discover the Story of Books',
     description:
       'Explore how books evolved from ancient records to modern digital reading. Follow the journey through scrolls, manuscripts, printing, libraries, and e-books.',
   },
   {
-    image: require('../assets/Slice02.png'),
+    image: require('../assets/onboarding-reading-history.png'),
     title: 'Travel Through Reading History',
     description:
       'Move across key eras using a clear visual timeline. Learn how clay tablets, papyrus, parchment, paper, and printed books shaped the way people shared knowledge.',
   },
   {
-    image: require('../assets/Slice03.png'),
+    image: require('../assets/onboarding-read-save-quiz.png'),
     title: 'Read, Save, and Test Yourself',
     description:
       'Browse short educational articles, save your favorites, and check what you remember with a quick quiz. Each section is designed to make book history simple and easy to explore.',
   },
   {
-    image: require('../assets/Slice04.png'),
+    image: require('../assets/onboarding-reading-tools.png'),
     title: 'Use Smart Reading Tools',
     description:
       'Calculate estimated reading time and discover which historical book era matches selected materials and formats. Turn small details into useful insights about books and reading.',
@@ -69,7 +69,7 @@ export function Loader({ onFinish }: { onFinish: () => void }) {
   }, [started, onFinish]);
   return (
     <ImageBackground
-      source={require('../assets/image 99.png')}
+      source={require('../assets/loader-scribe-background.png')}
       style={{ flex: 1 }}
       resizeMode="cover"
     >

@@ -146,7 +146,7 @@ export function FavoritesScreen() {
           ]}
         >
           <Image
-            source={require('../assets/image-Photoroom (37) 1.png')}
+            source={require('../assets/favorites-empty-book.png')}
             style={{ width: 220, height: 250, resizeMode: 'contain' }}
           />
           <Text style={[s.title, { textAlign: 'center' }]}>

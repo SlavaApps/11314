@@ -103,7 +103,7 @@ export function QuizScreen() {
         {!session.length ? (
           <>
             <Image
-              source={require('../assets/image 100.png')}
+              source={require('../assets/quiz-book-illustration.png')}
               style={{
                 width: layout.imageSize,
                 alignSelf: 'center',

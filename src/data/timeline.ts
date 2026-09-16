@@ -3,7 +3,7 @@ export const periods = [
     id: 'symbols',
     title: 'Early Symbols and Memory',
     date: 'Prehistory',
-    image: require('../assets/EarlySymbolsAndMemory.png'),
+    image: require('../assets/timeline-early-symbols-and-memory.png'),
     articleId: 'ClayTabletsAndFirstRecords',
     paragraphs: [
       'Before books existed, people used symbols, drawings, and oral storytelling to preserve memory. Cave markings, carved signs, and repeated stories helped communities pass knowledge from one generation to another. These early systems were not books yet, but they created the first need for recorded information.',
@@ -14,7 +14,7 @@ export const periods = [
     id: 'clay',
     title: 'Clay Tablet Civilizations',
     date: 'c. 3500 BC',
-    image: require('../assets/ClayTabletCivilizations.png'),
+    image: require('../assets/timeline-clay-tablet-civilizations.png'),
     articleId: 'ClayTabletsAndFirstRecords',
     paragraphs: [
       'In ancient Mesopotamia, clay tablets became one of the first durable writing surfaces. Scribes pressed signs into soft clay using a stylus, then dried or baked the tablets to preserve them. These tablets recorded trade, laws, myths, taxes, and daily administration.',
@@ -25,7 +25,7 @@ export const periods = [
     id: 'egypt',
     title: 'Egyptian Papyrus Age',
     date: 'c. 3100 BC',
-    image: require('../assets/EgyptianPapyrusAge.png'),
+    image: require('../assets/timeline-egyptian-papyrus-age.png'),
     articleId: 'PapyrusScrollsOfEgypt',
     paragraphs: [
       'Ancient Egypt introduced papyrus as a lighter and more flexible material for writing. Made from plants growing near the Nile, papyrus could be formed into sheets and joined into long scrolls. It was used for religious texts, medical notes, government records, and stories.',
@@ -36,7 +36,7 @@ export const periods = [
     id: 'scrolls',
     title: 'Greek and Roman Scrolls',
     date: 'c. 600 BC',
-    image: require('../assets/GreekAndRomanScrolls.png'),
+    image: require('../assets/timeline-greek-and-roman-scrolls.png'),
     articleId: 'BirthOfTheScroll',
     paragraphs: [
       'In Greek and Roman culture, scrolls became the standard format for long written works. Literature, philosophy, law, and public records were copied and stored in scroll form. Libraries collected scrolls and organized them as centers of learning.',
@@ -47,7 +47,7 @@ export const periods = [
     id: 'codex',
     title: 'Codex and Parchment Era',
     date: 'c. 100 AD',
-    image: require('../assets/CodexAndParchmentEra.png'),
+    image: require('../assets/timeline-codex-and-parchment-era.png'),
     articleId: 'CodexRevolution',
     paragraphs: [
       'The codex introduced a new way to read and organize written material. Instead of one long roll, texts were divided into pages and bound together along one side. Parchment made this format stronger because it could be folded, stacked, and written on both sides.',
@@ -58,7 +58,7 @@ export const periods = [
     id: 'medieval',
     title: 'Medieval Manuscript Culture',
     date: 'c. 800 AD',
-    image: require('../assets/MedievalManuscriptCulture.png'),
+    image: require('../assets/timeline-medieval-manuscript-culture.png'),
     articleId: 'IlluminatedBooks',
     paragraphs: [
       'During the Middle Ages, books were copied by hand in monasteries and scholarly centers. Scribes worked carefully to preserve religious, scientific, and literary texts. Each manuscript required time, skill, and expensive materials.',
@@ -69,7 +69,7 @@ export const periods = [
     id: 'print',
     title: 'Printing Press Revolution',
     date: 'c. 1450 AD',
-    image: require('../assets/PrintingPressRevolution.png'),
+    image: require('../assets/timeline-printing-press-revolution.png'),
     articleId: 'PrintingPressChangesEverything',
     paragraphs: [
       'The printing press transformed books from rare handmade objects into repeatable products. Johannes Gutenberg’s movable type allowed pages to be printed faster and more consistently. This made books cheaper and easier to distribute.',
@@ -80,7 +80,7 @@ export const periods = [
     id: 'digital',
     title: 'Digital Reading Age',
     date: '1971–today',
-    image: require('../assets/DigitalReadingAge.png'),
+    image: require('../assets/timeline-digital-reading-age.png'),
     articleId: 'DigitalBooksAndModernReading',
     paragraphs: [
       'Today, books exist in both physical and digital forms. E-books, audiobooks, and reading apps make it possible to access huge libraries from one device. Reading is no longer tied to a single material or format.',
