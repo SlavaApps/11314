@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Image, Pressable, ScrollView, Text, View } from 'react-native';
+import { Reveal } from '../components/Reveal';
 import { Button, Header } from '../components/UI';
 import { createQuiz } from '../data/quiz';
 import { useStorage } from '../state/Storage';
-import { colors, styles as s } from '../theme';
+import { colors } from '../theme';
+import { useScreenLayout } from '../hooks/useScreenLayout';
 export function QuizScreen() {
+  const { styles: s, ...layout } = useScreenLayout();
   const [session, setSession] = useState<ReturnType<typeof createQuiz>>([]);
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
@@ -39,7 +42,10 @@ export function QuizScreen() {
   };
   if (finished) {
     return (
-      <View style={s.screen}>
+      <Reveal
+        replayKey={finished ? 'result' : session.length ? index : 'intro'}
+        style={s.screen}
+      >
         <ScrollView
           contentContainerStyle={[
             s.content,
@@ -78,11 +84,14 @@ export function QuizScreen() {
             <Button title="Try again" onPress={start} />
           </View>
         </ScrollView>
-      </View>
+      </Reveal>
     );
   }
   return (
-    <View style={s.screen}>
+    <Reveal
+      replayKey={finished ? 'result' : session.length ? index : 'intro'}
+      style={s.screen}
+    >
       <Header
         title="Quiz"
         caption={session.length ? `${index + 1} / 10` : '10 questions'}
@@ -96,7 +105,7 @@ export function QuizScreen() {
             <Image
               source={require('../assets/image 100.png')}
               style={{
-                width: '100%',
+                width: layout.imageSize,
                 alignSelf: 'center',
                 aspectRatio: 1,
                 borderWidth: 1,
@@ -211,6 +220,6 @@ export function QuizScreen() {
           </>
         )}
       </ScrollView>
-    </View>
+    </Reveal>
   );
 }

@@ -4,10 +4,12 @@ import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import { periods } from '../data/timeline';
 import { TabsParamList } from '../navigation/types';
 import { Header } from '../components/UI';
-import { colors, styles as s } from '../theme';
+import { colors } from '../theme';
+import { useScreenLayout } from '../hooks/useScreenLayout';
 export function TimelineScreen({
   route,
 }: BottomTabScreenProps<TabsParamList, 'Timeline'>) {
+  const { styles: s, ...layout } = useScreenLayout();
   const [index, setIndex] = useState(0);
   const scroll = useRef<ScrollView>(null);
   useEffect(() => {
@@ -24,7 +26,7 @@ export function TimelineScreen({
       <View style={{ flex: 1, flexDirection: 'row' }}>
         <ScrollView
           style={{
-            width: 96,
+            width: layout.compact ? 82 : 96,
             flexGrow: 0,
             borderRightWidth: 1,
             borderColor: colors.line,
@@ -93,7 +95,11 @@ export function TimelineScreen({
         <ScrollView
           ref={scroll}
           style={{ flex: 1 }}
-          contentContainerStyle={{ padding: 16, paddingBottom: 30, gap: 14 }}
+          contentContainerStyle={{
+            padding: layout.compact ? 10 : 16,
+            paddingBottom: 30,
+            gap: 14,
+          }}
         >
           <Image
             source={period.image}

@@ -5,14 +5,15 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  useWindowDimensions,
   View,
 } from 'react-native';
+import { Reveal } from '../components/Reveal';
 import { WebView } from 'react-native-webview';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Button } from '../components/UI';
 import { useStorage } from '../state/Storage';
-import { colors, styles as s } from '../theme';
+import { colors } from '../theme';
+import { useScreenLayout } from '../hooks/useScreenLayout';
 const slides = [
   {
     image: require('../assets/Slice01.png'),
@@ -103,19 +104,20 @@ export function Loader({ onFinish }: { onFinish: () => void }) {
   );
 }
 export function Onboarding() {
+  const { styles: s, ...layout } = useScreenLayout();
   const [index, setIndex] = useState(0);
   const { update } = useStorage();
-  const { height, width } = useWindowDimensions();
+  const { height, width } = layout;
   const slide = slides[index];
   return (
-    <View style={s.screen}>
+    <Reveal replayKey={index} style={s.screen}>
       <ScrollView
         key={index}
         contentContainerStyle={{ flexGrow: 1, paddingBottom: 24 }}
       >
         <View
           style={{
-            height: Math.max(16, height * 0.045),
+            height: layout.compact ? 12 : Math.max(16, height * 0.045),
             borderTopWidth: 1,
             borderColor: colors.line,
             marginTop: 12,
@@ -125,13 +127,27 @@ export function Onboarding() {
           source={slide.image}
           style={{
             width: width - 12,
-            height: Math.min(width - 12, height * 0.45),
+            height: Math.min(
+              width - 12,
+              layout.availableHeight * (layout.compact ? 0.34 : 0.45),
+            ),
             alignSelf: 'center',
             resizeMode: 'cover',
           }}
         />
-        <View style={{ padding: 22, gap: 16, flex: 1 }}>
-          <Text style={[s.title, { fontSize: 27, marginTop: 10 }]}>
+        <View
+          style={{
+            padding: layout.padding,
+            gap: layout.compact ? 12 : 16,
+            flex: 1,
+          }}
+        >
+          <Text
+            style={[
+              s.title,
+              { fontSize: layout.compact ? 23 : 27, marginTop: 10 },
+            ]}
+          >
             {slide.title}
           </Text>
           <Text style={s.body}>{slide.description}</Text>
@@ -157,7 +173,7 @@ export function Onboarding() {
           </View>
         </View>
       </ScrollView>
-    </View>
+    </Reveal>
   );
 }
 const local = StyleSheet.create({

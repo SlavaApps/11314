@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Svg, { Path, Circle, Rect } from 'react-native-svg';
+import { useScreenLayout } from '../hooks/useScreenLayout';
 import { colors, styles as s } from '../theme';
 export function Icon({
   name,
@@ -118,9 +119,21 @@ export function Header({
   title: string;
   caption?: string;
 }) {
+  const layout = useScreenLayout();
   return (
-    <View style={local.header}>
-      <Text style={[s.title, { flex: 1 }]}>{title}</Text>
+    <View
+      style={[
+        local.header,
+        {
+          paddingHorizontal: layout.padding,
+          paddingVertical: layout.compact ? 12 : 18,
+          flexWrap: 'wrap',
+        },
+      ]}
+    >
+      <Text style={[layout.styles.title, { flexGrow: 1, flexShrink: 1 }]}>
+        {title}
+      </Text>
       {caption && <Text style={s.label}>{caption}</Text>}
     </View>
   );

@@ -16,8 +16,10 @@ import { Button, Header, Select } from '../components/UI';
 import { useStorage } from '../state/Storage';
 import { calculateReading } from '../utils/reading';
 import { finderOptions, findEra } from '../utils/era';
-import { colors, styles as s } from '../theme';
+import { colors } from '../theme';
+import { useScreenLayout } from '../hooks/useScreenLayout';
 export function ReadingTimeScreen() {
+  const { styles: s } = useScreenLayout();
   const { data, update } = useStorage();
   const [values, setValues] = useState(data.calculator);
   const [calculated, setCalculated] = useState(false);
@@ -127,6 +129,7 @@ export function ReadingTimeScreen() {
   );
 }
 export function EraFinderScreen() {
+  const { styles: s } = useScreenLayout();
   const { data, update } = useStorage();
   const [values, setValues] = useState(data.finder);
   const [show, setShow] = useState(false);

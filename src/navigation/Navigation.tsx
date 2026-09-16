@@ -12,6 +12,7 @@ import {
 import { TimelineScreen } from '../screens/Timeline';
 import { QuizScreen } from '../screens/Quiz';
 import { EraFinderScreen, ReadingTimeScreen } from '../screens/Tools';
+import { ScreenReveal } from '../components/Reveal';
 import { Icon } from '../components/UI';
 import { colors } from '../theme';
 const Stack = createNativeStackNavigator<RootParamList>();
@@ -24,12 +25,17 @@ const icons: Record<keyof TabsParamList, string> = {
   ReadingTime: 'clock',
   EraFinder: 'finder',
 };
+const screenLayout = ({ children }: { children: React.ReactNode }) => (
+  <ScreenReveal>{children}</ScreenReveal>
+);
 function Tabs() {
   return (
     <Tab.Navigator
+      screenLayout={screenLayout}
       screenOptions={({ route }) => ({
         headerShown: false,
         tabBarShowLabel: false,
+        tabBarHideOnKeyboard: true,
         tabBarActiveTintColor: colors.gold,
         tabBarInactiveTintColor: colors.text,
         tabBarStyle: {
@@ -89,6 +95,7 @@ export function Navigation() {
       <Stack.Navigator
         screenOptions={{
           headerShown: false,
+          animation: 'fade_from_bottom',
           contentStyle: { backgroundColor: colors.background },
         }}
       >

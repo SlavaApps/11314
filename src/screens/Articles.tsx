@@ -18,8 +18,10 @@ import { articles, Article } from '../data/content';
 import { RootParamList } from '../navigation/types';
 import { useStorage } from '../state/Storage';
 import { Button, Header, Icon } from '../components/UI';
-import { colors, styles as s } from '../theme';
+import { colors } from '../theme';
+import { useScreenLayout } from '../hooks/useScreenLayout';
 export function ArticleCard({ article }: { article: Article }) {
+  const { styles: s } = useScreenLayout();
   const navigation = useNavigation<NativeStackNavigationProp<RootParamList>>();
   const { data, toggleFavorite } = useStorage();
   const saved = data.favorites.includes(article.id);
@@ -103,6 +105,7 @@ function Tag({ text }: { text: string }) {
   );
 }
 export function ArticlesScreen() {
+  const { styles: s } = useScreenLayout();
   return (
     <View style={s.screen}>
       <Header title="Articles" caption="Book history" />
@@ -116,6 +119,7 @@ export function ArticlesScreen() {
   );
 }
 export function FavoritesScreen() {
+  const { styles: s } = useScreenLayout();
   const { data } = useStorage();
   const navigation = useNavigation<NativeStackNavigationProp<RootParamList>>();
   const saved = articles.filter(a => data.favorites.includes(a.id));
@@ -165,6 +169,7 @@ export function ArticleScreen({
   route,
   navigation,
 }: NativeStackScreenProps<RootParamList, 'Article'>) {
+  const { styles: s } = useScreenLayout();
   const article = articles.find(a => a.id === route.params.id);
   const { data, toggleFavorite } = useStorage();
   if (!article) {

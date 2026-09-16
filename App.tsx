@@ -15,7 +15,7 @@ function Application() {
   return (
     <SafeAreaView
       style={{ flex: 1, backgroundColor: colors.background }}
-      edges={['top', 'bottom']}
+      edges={['top', 'bottom', 'left', 'right']}
     >
       {data.onboarded ? <Navigation /> : <Onboarding />}
     </SafeAreaView>
