@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Image, Pressable, ScrollView, Text, View } from 'react-native';
+import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import { periods } from '../data/timeline';
 import { TabsParamList } from '../navigation/types';
@@ -94,23 +94,20 @@ export function TimelineScreen({
         </ScrollView>
         <ScrollView
           ref={scroll}
-          style={{ flex: 1 }}
+          style={{ flex: 1, minWidth: 0 }}
           contentContainerStyle={{
             padding: layout.compact ? 10 : 16,
             paddingBottom: 30,
             gap: 14,
           }}
         >
-          <Image
-            source={period.image}
-            style={{
-              width: '100%',
-              aspectRatio: 1.1,
-              borderRadius: 3,
-              borderWidth: 1,
-              borderColor: colors.gold,
-            }}
-          />
+          <View style={timelineStyles.imageFrame}>
+            <Image
+              source={period.image}
+              style={timelineStyles.image}
+              resizeMode="cover"
+            />
+          </View>
           <Text style={s.label}>{period.date}</Text>
           <Text style={s.subtitle}>{period.title}</Text>
           <View style={{ height: 1, backgroundColor: colors.line }} />
@@ -124,3 +121,22 @@ export function TimelineScreen({
     </View>
   );
 }
+
+const timelineStyles = StyleSheet.create({
+  imageFrame: {
+    alignSelf: 'stretch',
+    aspectRatio: 1.1,
+    borderRadius: 3,
+    borderWidth: 1,
+    borderColor: colors.gold,
+    overflow: 'hidden',
+  },
+  image: {
+    // Let the frame determine layout instead of the Android asset dimensions.
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+  },
+});

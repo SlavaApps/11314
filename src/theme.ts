@@ -40,7 +40,14 @@ export const styles = StyleSheet.create({
   },
   row: { flexDirection: 'row', alignItems: 'center', gap: 10 },
   divider: { height: 1, backgroundColor: colors.line, marginVertical: 16 },
-  image: { width: '100%', aspectRatio: 1.8 },
+  image: {
+    // Clear asset dimensions so the container width controls the image size.
+    width: undefined,
+    height: undefined,
+    alignSelf: 'stretch',
+    aspectRatio: 1.8,
+    resizeMode: 'cover',
+  },
   field: {
     borderWidth: 1,
     borderColor: colors.gold,

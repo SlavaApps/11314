@@ -1,4 +1,4 @@
-package com.booksrootsarchive
+package com.booksroots.archive
 
 import android.os.Bundle
 import com.facebook.react.ReactActivity
