@@ -1,5 +1,4 @@
 import React from 'react';
-import { DarkTheme, NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { View } from 'react-native';
@@ -79,29 +78,15 @@ function Tabs() {
 }
 export function Navigation() {
   return (
-    <NavigationContainer
-      theme={{
-        ...DarkTheme,
-        colors: {
-          ...DarkTheme.colors,
-          background: colors.background,
-          card: colors.background,
-          primary: colors.gold,
-          text: colors.text,
-          border: colors.line,
-        },
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+        animation: 'fade_from_bottom',
+        contentStyle: { backgroundColor: colors.background },
       }}
     >
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-          animation: 'fade_from_bottom',
-          contentStyle: { backgroundColor: colors.background },
-        }}
-      >
-        <Stack.Screen name="Main" component={Tabs} />
-        <Stack.Screen name="Article" component={ArticleScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+      <Stack.Screen name="Main" component={Tabs} />
+      <Stack.Screen name="Article" component={ArticleScreen} />
+    </Stack.Navigator>
   );
 }
