@@ -79,7 +79,7 @@ android {
 
     namespace "com.booksroots.archive"
     defaultConfig {
-        applicationId "com.test.project" // TEST SANDBOX — real value: com.booksroots.archive
+        applicationId "com.booksroots.archive"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 3
